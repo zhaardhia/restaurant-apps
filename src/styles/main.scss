@@ -1,0 +1,607 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Roboto", sans-serif;
+}
+$ijoTua: #5E8B7E;
+$ijoMuda: #DFEEEA;
+
+@mixin hover (){
+    &{
+        transition: all 0.2s linear;
+    }
+    &:hover{
+        color: darken($ijoMuda, 10%);
+    }
+    &:active{
+        color: darken($ijoMuda, 20%);;
+    }
+}
+@mixin hoverBurger (){
+    &{
+        transition: all 0.2s linear;
+    }
+    &:hover{
+        background-color: darken($ijoMuda, 10%);
+    }
+    &:active{
+        background-color: darken($ijoMuda, 20%);;
+    }
+}
+@mixin hoverCard(){
+    &{
+        transition: all 0.2s linear;
+        cursor: pointer;
+    }
+    &:hover{
+        transform: translateY(5px);
+        box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
+    }
+}
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background-color: #bf1722;
+    color: white;
+    padding: 8px;
+    z-index: 100;    
+}
+  
+.skip-link:focus {
+    top: 0;
+}
+a, button{
+    box-sizing: border-box;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+    list-style: none;
+    li{
+        padding-top: 2rem;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-size: 1.2rem;
+        padding: 1.3rem;
+        @include hover();
+    }
+}
+.burger{
+    padding: 1rem;
+    display: none;
+    cursor: pointer;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+    @include hoverBurger();
+}
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media screen and(max-width: 600px) {
+    .nav-links{
+        width: 60%;
+    }
+}
+@media screen and(max-width: 550px) {
+    body{
+        overflow-x: hidden;
+    }
+    nav{
+        background-color: #5E8B7E;
+    }
+    .nav-links{
+        z-index: 1;
+        // position: absolute;
+        // right: 0px;
+        // height: 92vh;
+        // top: 8vh;
+        position: absolute;
+        right: 0px;
+        top: 0rem;
+        height: 40rem;
+
+        background-color: #5E8B7E;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        // transition: transform 1s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        z-index: 2;
+        display: block;
+        margin-top: 1rem;
+        background-color: #5E8B7E;
+        border: 0;
+    }
+}
+.nav-active{
+    transform: translateX(0%);
+}
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+header{
+    width: 100%;
+    height: 590px;
+    background-color: $ijoTua;
+    background-image: url("../public/images/heros/hero-image.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    color: white;
+    @media screen and(min-width: 1200px) {
+        min-width: 1000px;
+    }
+    @media screen and(min-width: 200px) {
+        background-size: cover;
+    }
+    
+    nav{
+        display: flex;
+        justify-content: space-around;
+        img{
+            width: 120px;
+            margin-top: -1rem;
+        }
+    }
+    .hero-text{
+        width: 16rem;
+        margin: 6rem auto;
+        text-align: center;
+        h2{
+            font-size: 1.7rem;
+            font-weight: 700;
+        }
+        p{
+            margin-top: 2rem;
+            font-size: 1rem;
+            font-weight: 100;
+        }
+    }
+
+    @media screen and (min-width: 400px){
+        nav{
+            img{
+                width: 130px;
+            }
+            
+        }
+        .hero-text{
+            width: 16rem;
+            h2{
+                font-size: 1.7rem;
+            }
+            p{
+                font-size: 1rem;
+            }
+        }
+    }
+    @media screen and (min-width: 550px){
+        nav{
+            img{
+                width: 140px;
+            }
+        }
+        .hero-text{
+            width: 32rem;
+            h2{
+                font-size: 2rem;
+            }
+            p{
+                font-size: 1.1rem;
+            }
+        }
+    }
+    @media screen and (min-width: 800px) {
+        nav{
+            img{
+                width: 170px;
+            }
+        }
+        .hero-text{
+            width: 43.75rem;
+            h2{
+                font-size: 2.7rem;
+            }
+            p{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+
+main{
+    display: grid;
+    justify-items: center;
+    .category-restaurant{
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 2rem 2rem 2rem;
+        h3{
+            font-weight: 400;
+        }
+        hr{
+            opacity: 0.4;
+            margin-top: 0.8rem;
+        }
+        .category-div{
+            display: grid;
+            justify-items: center;
+            .category-list{
+                width: 14.625rem;
+                height: 14.25rem;
+                background-color: $ijoMuda;
+                @include hoverCard();
+                img{
+                    width: 100%;
+                }
+                h4{
+                    text-align: center;
+                    margin-top: 1.4rem;
+                }
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        }
+        @media screen and (min-width: 200px) {
+            margin-top: 5rem;
+            h3{
+                font-size: 1.4rem;
+            }
+            .category-div{
+                margin-top: 2rem;
+                .category-list{
+                    width: 12rem;
+                    height: 12.3rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+        @media screen and (min-width: 550px) {
+            .category-div{
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 2rem;
+            }
+        }
+        @media screen and (min-width: 800px) {
+            h3{
+                font-size: 1.6rem;
+            }
+            .category-div{
+                .category-list{
+                    width: 14.625rem;
+                    height: 14.25rem;
+                }
+            }
+        }
+        @media screen and (min-width: 1200px) {
+            .category-div{
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 4rem;
+            }
+        }
+    }
+
+    .promo-banner{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 4rem 0;
+        img{
+            width: 300px;
+        }
+        p{
+            font-size: 1.4rem;
+            margin-top: 4rem;
+        }
+        @media screen and (min-width: 200px) {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img{
+                width: 180px;
+            }
+            p{
+                font-size: 1rem;
+                margin-top: 2.4rem;
+            }
+        }
+        @media screen and (min-width: 550px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            width: 30rem;
+            img{
+                width: 250px;
+            }
+            p{
+                font-size: 1.2rem;
+                margin-top: 0rem;
+            }
+        }
+        @media screen and (min-width: 800px) {
+            width: 32rem;
+            img{
+                width: 270px;
+            }
+            p{
+                font-size: 1.2rem;
+            }
+        }
+        @media screen and (min-width: 1200px) {
+            width: 40rem;
+            margin-left: 2rem;
+            img{
+                width: 300px;
+            }
+            p{
+                font-size: 1.4rem;
+                margin-top: 0;
+            }
+        }
+    }
+
+    .top-restaurant{
+        margin-top: 3rem;
+        .top-restaurant-title{
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+        hr{
+            opacity: 0.4;
+            margin-top: 0.8rem;
+        }
+        .top-div{
+            display: grid;
+            justify-items: center;
+            .top-list{
+                img{
+                    border-radius: 20px;
+                    width: 100%;
+                }
+                margin-top: 2rem;
+                color: white;
+                background-color: $ijoTua;
+                border-radius: 20px;
+                @include hoverCard();
+                .top-list-info{
+                    width: 13rem;
+                    margin: 1rem 1.5rem 0 1.5rem;
+                    .info-text{
+                        margin-top: 1rem;
+                        .city{
+                            opacity: 0.6;
+                        }
+                        h3{
+                            font-weight: 500;
+                        }
+                        p{
+                            font-weight: 100;
+                        }
+                    }
+                    p{
+                        font-size: 0.8rem;
+                        font-weight: 100;
+                    }
+                }
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        }
+        @media screen and (min-width: 200px) {
+            .top-restaurant-title{
+                font-size: 1.4rem;
+            }
+            .top-div{
+                .top-list{
+                    width: 13rem;
+                    height: 19rem;
+                    .top-list-info{
+                        width: 10rem;
+                        .info-text{
+                            margin-top: 0.5rem;
+                            h3{
+                                font-size: 1rem;
+                            }
+                            p{
+                                font-size: 0.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (min-width: 550px) {
+            .top-div{
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 1.2rem;
+            }
+        }
+        @media screen and (min-width: 800px) {
+            .top-restaurant-title{
+                font-size: 1.6rem;
+            }
+            .top-div{
+                .top-list{
+                    width: 14.625rem;
+                    height: 20.5rem;
+                    .top-list-info{
+                        width: 11.7rem;
+                        .info-text{
+                            margin-top: 1rem;
+                            h3{
+                                font-size: 1.2rem;
+                            }
+                        }
+                        .info-text-desc{
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (min-width: 1200px) {
+            .top-div{
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 3.2rem;
+            }
+        }
+
+    }
+}
+
+footer{
+    width: 100%;
+    margin-top: 5rem;
+    color: white;
+    background-color: $ijoTua;
+    display: grid;
+    justify-items: center;
+
+    .footer-container{
+        width: 60%;
+        margin-bottom: 3rem;
+        display: grid;
+        .footer-container-first{
+            h4{
+                font-weight: 700;
+            }
+            p{
+                font-weight: 100;
+            }
+            line-height: 1.5;
+        }
+        .footer-container-second{
+            width: 5rem;
+            display: flex;
+            flex-direction: column;
+            line-height: 2;
+            a{
+                text-decoration: none;
+                color: white;
+                font-weight: 100;
+                @include hover();
+            }
+        }
+        .footer-container-third{
+            div{
+                width: 8rem;
+                line-height: 2;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            a{
+                text-decoration: none;
+                color: white;
+                width: 1.5rem;
+                font-size: 1.5rem;
+                @include hover();
+            }
+        }
+    }
+    hr{
+        opacity: 0.5;
+        width: 60%;
+        margin-bottom: 1rem;
+    }
+
+    .copyright{
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    @media screen and (min-width: 200px){
+        .footer-container{
+            img{
+                width: 170px;
+            }
+            h4{
+                font-size: 1rem;
+            }
+            p, a{
+                font-size: 0.8rem;
+            }
+            grid-template-columns: 1fr;
+            justify-items:start;
+
+            .footer-container-second, .footer-container-third{
+                margin-top: 2rem;
+            }
+        }
+        .copyright{
+            font-size: 0.8rem;
+        }
+    }
+    @media screen and (min-width: 500px) {
+        .footer-container{
+            img{
+                width: 150px;
+            }
+            h4{
+                font-size: 1.1rem;
+            }
+            p, a{
+                font-size: 1rem;
+            }
+            grid-template-columns: 1fr;
+            justify-items:start;
+
+            .footer-container-second, .footer-container-third{
+                margin-top: 2rem;
+            }
+        }
+        .copyright{
+            font-size: 1rem;
+        }
+    }
+    @media screen and (min-width: 800px) {
+        .footer-container{
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            img{
+                width: 200px;
+            }
+            .footer-container-third{
+                margin-top: 4.3rem;
+            }
+            .footer-container-second{
+                margin-top: 4rem;
+            }
+        }
+    }
+}
+
