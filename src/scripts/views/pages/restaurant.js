@@ -17,17 +17,15 @@ const Restaurant = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const topdiv = document.querySelector('.top-div');
     try {
       const restaurants = await RestaurantSource.mainRestaurant();
-      const topdiv = document.querySelector('.top-div');
       restaurants.forEach((restaurant) => {
         topdiv.innerHTML += createRestaurantItemTemplate(restaurant);
       });
     } catch (error) {
-      const topdiv = document.querySelector('.top-div');
       topdiv.innerHTML += `
-        <h2>🙁 ${error.message} 😔</h2> <br>
+        <h2 class="error-load-page">🙁 SYSTEM: ${error.message} 😔</h2> <br>
         <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/H7wajFPnZGdRWaQeu0" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/SportsManias-sportsmanias-technical-difficulties-please-stand-by-H7wajFPnZGdRWaQeu0">via GIPHY</a></p>
       `;
     } finally {

@@ -57,7 +57,7 @@
     }
 }
 .detail-menu{
-    margin: 4rem 0 4rem 0;
+    margin: 4rem auto;
     .detail-menu-eat{
         display: flex;
         margin-top: 2rem;
@@ -82,6 +82,9 @@
         .detail-menu-eat{
             justify-content: center;
             flex-direction: column;
+            .detail-beverage{
+                margin-top: 2rem;
+            }
         }
     }
     @media screen and (min-width: 500px) {
@@ -92,6 +95,9 @@
         .detail-menu-eat{
             justify-content: space-around;
             flex-direction: row;
+            .detail-beverage{
+                margin-top: 0;
+            }
         }
         
     }
@@ -106,6 +112,7 @@
     
 }
 .detail-review{
+    margin: 0 auto;
     @media screen and (min-width: 200px) {
         width: 15rem;
     }

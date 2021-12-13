@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../data/restaurant-source';
-import { createRestaurantDetailTemplate } from '../templates/template-creator';
+import { createRestaurantDetailTemplate, modalReview } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
@@ -35,10 +35,12 @@ const Detail = {
       await this._foodsMenu(restaurant);
       await this._drinksMenu(restaurant);
       await this._customerReviews(restaurant);
+      await this._modalReview();
+      await this._sendReview(url);
     } catch (error) {
       const topdiv = document.querySelector('.top-div');
       topdiv.innerHTML += `
-        <h2>🙁 ${error.message} 😔</h2> <br>
+        <h2 class="error-load-page">🙁 SYSTEM: ${error.message} 😔</h2> <br>
         <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/H7wajFPnZGdRWaQeu0" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/SportsManias-sportsmanias-technical-difficulties-please-stand-by-H7wajFPnZGdRWaQeu0">via GIPHY</a></p>
       `;
     } finally {
@@ -75,8 +77,39 @@ const Detail = {
       <div class="div-comment">
         <button id="add-comment">Add Review</button>
       </div>
+      ${modalReview()}
     `;
   },
+
+  async _modalReview() {
+    const modalBtn = document.querySelector('#add-comment');
+    const modalBg = document.querySelector('.modal-bg');
+    const modalClose = document.querySelector('.modal-close');
+    modalBtn.addEventListener('click', () => {
+      modalBg.classList.add('bg-active');
+    });
+    modalClose.addEventListener('click', () => {
+      modalBg.classList.remove('bg-active');
+    });
+  },
+
+  async _sendReview(url) {
+    const inputName = document.querySelector('#name-review');
+    const inputReview = document.querySelector('#review-review');
+    const buttonAdd = document.querySelector('#send-comment');
+
+    buttonAdd.addEventListener("click", () => {
+      const comment = {
+        id: url.id,
+        name: inputName.value,
+        review: inputReview.value,
+      };
+      RestaurantSource.addReview(comment);
+      document.querySelector('.modal-bg').classList.remove('bg-active');
+      this.afterRender();
+    });
+  },
+
 };
 
 export default Detail;

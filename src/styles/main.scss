@@ -192,129 +192,7 @@ nav{
     padding: 5px 50px;
     background-color: rgba(29, 29, 29, 0.8);
 }
-.banner{
-    position: relative;
-    width: 100%;
-    height: 75vh;
-    background: url('../public/images/heros/hero-image.png');
-    background-size: cover;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    .hero-text{
-        width: 100%;
-        // margin: 6rem auto;
-        // padding: 10rem 10rem;
-        color: #E5E5E5;
-        h2{
-            font-size: 2.7rem;
-            font-weight: 700;
-        }
-        p{
-            margin-top: 2rem;
-            font-size: 1.5rem;
-            font-weight: 100;
-        }
-    }
-}
-.banner2{
-    height: 130px;
-    background-color: #1f1d1d;
-    background-image: url('../public/images/heros/hero-image.png');
-}
-
-// header{
-//     width: 100%;
-//     height: 590px;
-//     background-color: $ijoTua;
-//     background-image: url("../public/images/heros/hero-image.png");
-//     background-position: center;
-//     background-repeat: no-repeat;
-    
-//     color: white;
-//     @media screen and(min-width: 1200px) {
-//         min-width: 1000px;
-//     }
-//     @media screen and(min-width: 200px) {
-//         background-size: cover;
-//     }
-    
-//     nav{
-//         // position: fixed;
-//         display: flex;
-//         justify-content: space-around;
-//         img{
-//             width: 120px;
-//             margin-top: 0rem;
-//         }
-//     }
-//     .hero-text{
-//         width: 16rem;
-//         margin: 6rem auto;
-//         text-align: center;
-//         h2{
-//             font-size: 1.7rem;
-//             font-weight: 700;
-//         }
-//         p{
-//             margin-top: 2rem;
-//             font-size: 1rem;
-//             font-weight: 100;
-//         }
-//     }
-
-//     @media screen and (min-width: 400px){
-//         nav{
-//             img{
-//                 width: 130px;
-//             }
-            
-//         }
-//         .hero-text{
-//             width: 16rem;
-//             h2{
-//                 font-size: 1.7rem;
-//             }
-//             p{
-//                 font-size: 1rem;
-//             }
-//         }
-//     }
-//     @media screen and (min-width: 550px){
-//         nav{
-//             img{
-//                 width: 140px;
-//                 margin-top: -1rem;
-//             }
-//         }
-//         .hero-text{
-//             width: 32rem;
-//             h2{
-//                 font-size: 2rem;
-//             }
-//             p{
-//                 font-size: 1.1rem;
-//             }
-//         }
-//     }
-//     @media screen and (min-width: 800px) {
-//         nav{
-//             img{
-//                 width: 170px;
-//             }
-//         }
-//         .hero-text{
-//             width: 43.75rem;
-//             h2{
-//                 font-size: 2.7rem;
-//             }
-//             p{
-//                 font-size: 1.5rem;
-//             }
-//         }
-//     }
-// }
-
+@import 'bannerHero';
 
 main{
     display: grid;
@@ -323,8 +201,14 @@ main{
     @import 'promoBanner';
     @import 'loadingAnimation';
     @import 'topRestaurant';
+    @import 'modalReview';
 }
-
+.error-load-page {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #721714;
+    text-align: center;
+}
 // Detail CSS
 
 @import 'detailMenu';

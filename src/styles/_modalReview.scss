@@ -1,0 +1,134 @@
+// MODAL
+.modal-bg{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    
+}
+.bg-active{
+    visibility: visible;
+    opacity: 1;
+}
+.modal{
+    background-color: white;
+    width: 30rem;
+    height: 31rem;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    
+    .modal-main{
+        width: 80%;
+        margin-top: 2rem;
+        div{
+            display: flex;
+            flex-direction: column;
+            margin: 1rem 0;
+        }
+        h3{
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+        p{
+            font-size: 1rem;
+            font-weight: 100;
+        }
+        hr{
+            opacity: 0.5;
+            margin-top: 1rem;
+        }
+        input[type=text] {
+            background-color: #f3f3f5;
+            height: 2.7rem;
+            border: 1px solid #E5E5E5;
+            border-radius: 10px;
+            margin: 0.8rem 0 0.8rem 0;
+            padding: 10px;
+            color: #1f1d1d;
+        }
+        textarea{
+            background-color: #f3f3f5;
+            border: 1px solid #E5E5E5;
+            border-radius: 10px;
+            margin: 0.8rem 0 1rem 0;
+            padding: 10px;
+            color: #1f1d1d;
+        }
+        .send-comment-div{
+            margin-left: 18rem;
+            button{
+                width: 6rem;
+                height: 2rem;
+                border-radius: 10px;
+                border: 0;
+                background-color: rgb(233, 233, 233);
+                color: #222831;
+                transition: all 0.2s linear;
+                cursor: pointer;
+            }
+            button:hover{
+                background: #A7C4BC;
+                color: white;
+            }
+            button:active{
+                background: #2F5D62;
+            }
+        }
+    }
+    
+    @media screen and (max-width: 700px) {
+        width: 20rem;
+        .modal-main{
+            .send-comment-div{
+                margin-left: 12rem;
+                button{
+                    width: 4rem;
+                }
+            }
+            h3{
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+            p{
+                font-size: 0.8rem;
+                font-weight: 100;
+            }
+        }
+    }
+}
+
+.modal-close{
+    position: absolute;
+    margin-left: 26rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    // width: 2rem;
+    // height: 2rem;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(233, 233, 233);
+    transition: all 0.2s linear;
+    cursor: pointer;
+    z-index: 99;
+    @media screen and (max-width: 700px) {
+        margin-left: 16rem;
+    }
+}
+.modal-close:hover{
+    background: #af403c;
+    color: white;
+}
+.modal-close:active{
+    background: #d4211a;
+}

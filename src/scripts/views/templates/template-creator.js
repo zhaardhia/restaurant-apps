@@ -107,6 +107,29 @@ const bannerOthers = `
   </div>
 `;
 
+const modalReview = () => `
+<div class="modal-bg">
+<div class="modal">
+    <button class="modal-close">x</button>
+    <div class="modal-main">
+        <h3>Input Review</h3>
+        <hr>
+        <div>
+            <label for="name">Name: </label>
+            <input id="name-review" type="text" name="name">
+        </div>
+        <div>
+            <label for="review">Review: </label>
+            <textarea name="review" id="review-review" cols="30" rows="10"></textarea>
+        </div>
+        <div class="send-comment-div">
+            <button id="send-comment">Send</button>
+        </div>
+    </div>
+</div>
+</div>
+`;
+
 export {
   createRestaurantItemTemplate,
   createRestaurantDetailTemplate,
@@ -116,4 +139,5 @@ export {
   createLikedButtonTemplateMain,
   bannerHome,
   bannerOthers,
+  modalReview,
 };

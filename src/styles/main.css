@@ -250,20 +250,64 @@ nav ul li a {
           align-items: center;
 }
 
+@media screen and (min-width: 1200px) {
+  .banner {
+    min-width: 1000px;
+  }
+}
+
+@media screen and (min-width: 200px) {
+  .banner {
+    background-size: cover;
+  }
+}
+
 .banner .hero-text {
   width: 100%;
   color: #E5E5E5;
 }
 
+@media screen and (max-width: 500px) {
+  .banner .hero-text {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
 .banner .hero-text h2 {
-  font-size: 2.7rem;
   font-weight: 700;
 }
 
 .banner .hero-text p {
   margin-top: 2rem;
-  font-size: 1.5rem;
   font-weight: 100;
+}
+
+@media screen and (min-width: 400px) {
+  .banner .hero-text h2 {
+    font-size: 1.7rem;
+  }
+  .banner .hero-text p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .banner .hero-text h2 {
+    font-size: 2rem;
+  }
+  .banner .hero-text p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .banner .hero-text h2 {
+    font-size: 2.7rem;
+  }
+  .banner .hero-text p {
+    font-size: 1.5rem;
+  }
 }
 
 .banner2 {
@@ -535,6 +579,181 @@ main .top-restaurant .top-div .top-list .top-list-info p {
   }
 }
 
+main .modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.5s;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+main .bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+main .modal {
+  background-color: white;
+  width: 30rem;
+  height: 31rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+}
+
+main .modal .modal-main {
+  width: 80%;
+  margin-top: 2rem;
+}
+
+main .modal .modal-main div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1rem 0;
+}
+
+main .modal .modal-main h3 {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+main .modal .modal-main p {
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+main .modal .modal-main hr {
+  opacity: 0.5;
+  margin-top: 1rem;
+}
+
+main .modal .modal-main input[type=text] {
+  background-color: #f3f3f5;
+  height: 2.7rem;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  margin: 0.8rem 0 0.8rem 0;
+  padding: 10px;
+  color: #1f1d1d;
+}
+
+main .modal .modal-main textarea {
+  background-color: #f3f3f5;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  margin: 0.8rem 0 1rem 0;
+  padding: 10px;
+  color: #1f1d1d;
+}
+
+main .modal .modal-main .send-comment-div {
+  margin-left: 18rem;
+}
+
+main .modal .modal-main .send-comment-div button {
+  width: 6rem;
+  height: 2rem;
+  border-radius: 10px;
+  border: 0;
+  background-color: #e9e9e9;
+  color: #222831;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+main .modal .modal-main .send-comment-div button:hover {
+  background: #A7C4BC;
+  color: white;
+}
+
+main .modal .modal-main .send-comment-div button:active {
+  background: #2F5D62;
+}
+
+@media screen and (max-width: 700px) {
+  main .modal {
+    width: 20rem;
+  }
+  main .modal .modal-main .send-comment-div {
+    margin-left: 12rem;
+  }
+  main .modal .modal-main .send-comment-div button {
+    width: 4rem;
+  }
+  main .modal .modal-main h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  main .modal .modal-main p {
+    font-size: 0.8rem;
+    font-weight: 100;
+  }
+}
+
+main .modal-close {
+  position: absolute;
+  margin-left: 26rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 0;
+  background-color: #e9e9e9;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  z-index: 99;
+}
+
+@media screen and (max-width: 700px) {
+  main .modal-close {
+    margin-left: 16rem;
+  }
+}
+
+main .modal-close:hover {
+  background: #af403c;
+  color: white;
+}
+
+main .modal-close:active {
+  background: #d4211a;
+}
+
+.error-load-page {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #721714;
+  text-align: center;
+}
+
 .detail-head {
   margin-top: 5rem;
   display: -webkit-box;
@@ -619,7 +838,7 @@ main .top-restaurant .top-div .top-list .top-list-info p {
 }
 
 .detail-menu {
-  margin: 4rem 0 4rem 0;
+  margin: 4rem auto;
 }
 
 .detail-menu .detail-menu-eat {
@@ -678,6 +897,9 @@ main .top-restaurant .top-div .top-list .top-list-info p {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .detail-menu .detail-menu-eat .detail-beverage {
+    margin-top: 2rem;
+  }
 }
 
 @media screen and (min-width: 500px) {
@@ -698,6 +920,9 @@ main .top-restaurant .top-div .top-list .top-list-info p {
         -ms-flex-direction: row;
             flex-direction: row;
   }
+  .detail-menu .detail-menu-eat .detail-beverage {
+    margin-top: 0;
+  }
 }
 
 .detail-menu h3 {
@@ -708,6 +933,10 @@ main .top-restaurant .top-div .top-list .top-list-info p {
 
 .detail-menu hr {
   opacity: 0.5;
+}
+
+.detail-review {
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 200px) {
