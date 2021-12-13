@@ -842,7 +842,7 @@ footer {
 }
 
 footer .footer-container {
-  width: 60%;
+  width: 100%;
   margin-bottom: 3rem;
   display: -ms-grid;
   display: grid;
@@ -922,7 +922,7 @@ footer .footer-container .footer-container-third a:active {
 
 footer hr {
   opacity: 0.5;
-  width: 60%;
+  width: 100%;
   margin-bottom: 1rem;
 }
 

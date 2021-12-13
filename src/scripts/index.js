@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 /* eslint-disable func-names */
 /* eslint-disable array-callback-return */
@@ -6,8 +7,7 @@ import 'regenerator-runtime'; /* for async await transpile */
 // import '../styles/main.css';
 import '../styles/main.scss';
 import App from './views/app';
-// import './components/footer';
-import DATA from '../DATA.json';
+import './components/footerApp';
 
 // const topdiv = document.querySelector('.top-div');
 
