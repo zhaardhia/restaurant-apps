@@ -1,0 +1,119 @@
+footer{
+    width: 100%;
+    margin-top: 5rem;
+    color: white;
+    background-color: $ijoTua;
+    display: grid;
+    justify-items: center;
+
+    .footer-container{
+        width: 60%;
+        margin-bottom: 3rem;
+        display: grid;
+        .footer-container-first{
+            h4{
+                font-weight: 700;
+            }
+            p{
+                font-weight: 100;
+            }
+            line-height: 1.5;
+        }
+        .footer-container-second{
+            width: 5rem;
+            display: flex;
+            flex-direction: column;
+            line-height: 2;
+            a{
+                text-decoration: none;
+                color: white;
+                font-weight: 100;
+                @include hover();
+            }
+        }
+        .footer-container-third{
+            div{
+                width: 8rem;
+                line-height: 2;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            a{
+                text-decoration: none;
+                color: white;
+                width: 1.5rem;
+                font-size: 1.5rem;
+                @include hover();
+            }
+        }
+    }
+    hr{
+        opacity: 0.5;
+        width: 60%;
+        margin-bottom: 1rem;
+    }
+
+    .copyright{
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    @media screen and (min-width: 200px){
+        .footer-container{
+            img{
+                width: 170px;
+            }
+            h4{
+                font-size: 1rem;
+            }
+            p, a{
+                font-size: 0.8rem;
+            }
+            grid-template-columns: 1fr;
+            justify-items:start;
+
+            .footer-container-second, .footer-container-third{
+                margin-top: 2rem;
+            }
+        }
+        .copyright{
+            font-size: 0.8rem;
+        }
+    }
+    @media screen and (min-width: 500px) {
+        .footer-container{
+            img{
+                width: 150px;
+            }
+            h4{
+                font-size: 1.1rem;
+            }
+            p, a{
+                font-size: 1rem;
+            }
+            grid-template-columns: 1fr;
+            justify-items:start;
+
+            .footer-container-second, .footer-container-third{
+                margin-top: 2rem;
+            }
+        }
+        .copyright{
+            font-size: 1rem;
+        }
+    }
+    @media screen and (min-width: 800px) {
+        .footer-container{
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            img{
+                width: 200px;
+            }
+            .footer-container-third{
+                margin-top: 4.3rem;
+            }
+            .footer-container-second{
+                margin-top: 4rem;
+            }
+        }
+    }
+}

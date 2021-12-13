@@ -1,0 +1,160 @@
+.detail-head{
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    .img-detail{
+        border-radius: 10px;
+        margin: 0 2.5rem 0 2.5rem;
+    }
+    .vl{
+        border-left: 2px solid rgba(0, 0, 0, 0.59);
+        height: 100%;
+        margin: 0 2.5rem 0 2.5rem;
+    }
+    .detail-head-container{
+        margin: 0 2.5rem 0 2.5rem;
+        h3{
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+        .detail-street{
+            font-size: 1rem;
+            opacity: 0.4;
+            margin-bottom: 0.7rem;
+        }
+        p{
+            font-size: 1rem;
+            font-weight: 100;
+        }
+    }
+    .detail-description{
+        margin-top: 0.5rem;
+    }
+    @media screen and (min-width: 200px) {
+        flex-direction: column;
+        .img-detail{
+            width: 15rem;
+        }
+        .detail-head-container{
+            margin-top: 2rem;
+            width: 15rem;
+        }
+    }
+    @media screen and (min-width: 500px) {
+        .img-detail{
+            width: 20rem;
+        }
+        .detail-head-container{
+            margin-top: 2rem;
+            width: 20rem;
+        }
+    }
+    @media screen and (min-width: 850px) {
+        flex-direction: row;
+        .detail-head-container{
+            margin-top: 0;
+        }
+    }
+}
+.detail-menu{
+    margin: 4rem 0 4rem 0;
+    .detail-menu-eat{
+        display: flex;
+        margin-top: 2rem;
+        .detail-menu-card{
+            @include hoverCard();
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+            background-color: #A7C4BC;
+            margin: 1rem 0;
+            border-radius: 10px;
+            width: 11rem;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p{
+                color: white;
+            }
+        }
+    }
+    @media screen and (min-width: 200px) {
+        width: 15rem;
+        .detail-menu-eat{
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+    @media screen and (min-width: 500px) {
+        width: 20rem;
+    }
+    @media screen and (min-width: 850px) {
+        width: 55rem;
+        .detail-menu-eat{
+            justify-content: space-around;
+            flex-direction: row;
+        }
+        
+    }
+    h3{
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+    hr{
+        opacity: 0.5;
+    }
+    
+}
+.detail-review{
+    @media screen and (min-width: 200px) {
+        width: 15rem;
+    }
+    @media screen and (min-width: 500px) {
+        width: 20rem;
+    }
+    @media screen and (min-width: 850px) {
+        width: 55rem;
+    }
+    .detail-comment{
+        margin: 1rem 0;
+        background-color: rgba(105, 102, 102, 0.2);
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 6px 0 rgba(0, 0, 0, 0.19);
+    }
+    h3{
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+    hr{
+        opacity: 0.5;
+    }
+    .comment-date{
+        opacity: 0.3;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    .div-comment{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+    }
+    #add-comment{
+        width: 7rem;
+        height: 3rem;
+        border-radius: 10px;
+        border: 0;
+        background-color: rgb(233, 233, 233);
+        color: #222831;
+        transition: all 0.2s linear;
+        cursor: pointer;
+    }
+    #add-comment:hover{
+        background: #A7C4BC;
+        color: white;
+    }
+    #add-comment:active{
+        background: #2F5D62;
+    }
+}

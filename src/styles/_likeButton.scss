@@ -1,0 +1,36 @@
+.like {
+    font-size: 20px;
+    position: relative;
+    
+    // margin-left: 12rem;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    // width: 20px;
+    cursor: pointer;
+    @media screen and (min-width: 200px) {
+        bottom: 25px;
+        left: 160px;
+    }
+    @media screen and (min-width: 800px) {
+        bottom: 30px;
+        left: 180px;
+    }
+}
+.likeDetail {
+    font-size: 18px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background-color: #db0000;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

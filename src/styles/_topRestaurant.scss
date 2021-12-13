@@ -1,0 +1,110 @@
+.top-restaurant{
+    margin-top: 3rem;
+    .top-restaurant-title{
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+    hr{
+        opacity: 0.4;
+        margin-top: 0.8rem;
+    }
+    .top-div{
+        display: grid;
+        justify-items: center;
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .top-list{
+            img{
+                border-radius: 20px;
+                width: 100%;
+            }
+            margin-top: 2rem;
+            color: white;
+            background-color: $ijoTua;
+            border-radius: 20px;
+            @include hoverCard();
+            .top-list-info{
+                width: 13rem;
+                margin: 1rem 1.5rem 0 1.5rem;
+                .info-text{
+                    margin-top: 1rem;
+                    .city{
+                        opacity: 0.6;
+                    }
+                    h3{
+                        font-weight: 500;
+                    }
+                    p{
+                        font-weight: 100;
+                    }
+                }
+                p{
+                    font-size: 0.8rem;
+                    font-weight: 100;
+                }
+            }
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    }
+    @media screen and (min-width: 200px) {
+        .top-restaurant-title{
+            font-size: 1.4rem;
+        }
+        .top-div{
+            .top-list{
+                width: 13rem;
+                height: 19.5rem;
+                .top-list-info{
+                    width: 10rem;
+                    .info-text{
+                        margin-top: 0.5rem;
+                        h3{
+                            font-size: 1rem;
+                        }
+                        p{
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 550px) {
+        .top-div{
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1.2rem;
+        }
+    }
+    @media screen and (min-width: 800px) {
+        .top-restaurant-title{
+            font-size: 1.6rem;
+        }
+        .top-div{
+            .top-list{
+                width: 14.625rem;
+                height: 21rem;
+                .top-list-info{
+                    width: 11.7rem;
+                    .info-text{
+                        margin-top: 1rem;
+                        h3{
+                            font-size: 1.2rem;
+                        }
+                    }
+                    .info-text-desc{
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        .top-div{
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 3.2rem;
+        }
+    }
+
+}

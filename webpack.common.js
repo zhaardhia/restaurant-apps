@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+/* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
@@ -14,43 +16,43 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          "style-loader",
-          "css-loader",
+          'style-loader',
+          'css-loader',
           {
             loader: 'sass-loader',
             options: {
               // Prefer `dart-sass`
-              implementation: require("sass"),
+              implementation: require('sass'),
             },
-          }
+          },
         ],
       },
       {
         test: /\.html$/,
-        use: ['html-loader']
+        use: ['html-loader'],
       },
       {
-        test: /\.(png|jp(e*)g|svg)$/,  
+        test: /\.(png|jp(e*)g|svg)$/,
         use: [{
           loader: 'url-loader',
           // options: {
           //   publicPath: path.resolve("src/public/images/hero"),
           // }
-          options: { 
+          options: {
             limit: 8000, // Convert images < 8kb to base64 strings
-            name: 'images/[hash]-[name].[ext]'
+            name: 'images/[hash]-[name].[ext]',
             // name: '[name].[hash:6].[ext]',
             // outputPath: 'images',
             // publicPath: 'images',
             // emitFile: true,
             // esModule: false
-          } 
-        }]
+          },
+        }],
       },
       {
         // test: /\.(html)$/,
         // use: ['html-loader']
-      }
+      },
     ],
   },
   plugins: [
