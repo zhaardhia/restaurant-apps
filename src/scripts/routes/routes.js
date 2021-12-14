@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import Main from '../views/pages/main';
 import Restaurant from '../views/pages/restaurant';
 import Detail from '../views/pages/detail';

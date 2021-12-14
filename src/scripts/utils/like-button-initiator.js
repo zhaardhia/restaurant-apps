@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import FavoriteRestaurantIdb from '../data/favoriterestaurant-idb';
 import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/templates/template-creator';
 
@@ -6,12 +5,10 @@ const LikeButtonInitiator = {
   async init({ likeButtonContainer, restaurant }) {
     this._likeButtonContainer = likeButtonContainer;
     this._restaurant = restaurant;
-    // console.log(restaurant);
     await this._renderButton();
   },
 
   async _renderButton() {
-    // console.log(this._restaurant);
     const { id } = this._restaurant;
     if (await this._isRestaurantExist(id)) {
       this._renderLiked();

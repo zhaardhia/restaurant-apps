@@ -7,7 +7,6 @@ import LikeButtonInitiator from '../../utils/like-button-initiator';
 const Detail = {
   async render() {
     return `
-      
       <div id="restaurant-detail" class="detail-restaurant"></div>
       <div class="loader" style="margin-top: 2rem;"></div>
       <div id="likeButtonContainer"></div>
@@ -15,7 +14,6 @@ const Detail = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
     try {
       const url = UrlParser.parseActiveUrlWithoutCombiner();
       const restaurant = await RestaurantSource.detailRestaurant(url.id);

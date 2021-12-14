@@ -1,4 +1,3 @@
-/* eslint-disable no-shadow */
 import RestaurantSource from '../../data/restaurant-source';
 import { createRestaurantItemTemplate } from '../templates/template-creator';
 

@@ -1,7 +1,13 @@
+/* eslint-disable import/no-import-module-exports */
+/* eslint-disable no-unused-vars */
 /* eslint-disable global-require */
 /* eslint-disable import/no-extraneous-dependencies */
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+
 const path = require('path');
 
 module.exports = {
@@ -27,10 +33,10 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.html$/,
-        use: ['html-loader'],
-      },
+      // {
+      //   test: /\.html$/,
+      //   use: ['html-loader'],
+      // },
       {
         test: /\.(png|jp(e*)g|svg)$/,
         use: [{
@@ -65,6 +71,36 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+        },
+      ],
+    }),
+    // new ServiceWorkerWebpackPlugin({
+    //   entry: path.resolve(__dirname, 'src/scripts/sw.js'),
+    //   filename: 'sw.js',
+    // }),
+    new WebpackPwaManifest({
+      name: 'Restaurant Catalogue Web App',
+      short_name: 'Restaurant App',
+      description: 'The Top Restaurant Catalogue!',
+      background_color: '#2F5D62',
+      crossorigin: 'anonymous', // can be null, use-credentials or anonymous
+      fingerprints: false,
+      icons: [
+        {
+          src: path.resolve('src/public/images/icon/JaFood-putih.png'),
+          sizes: [72, 96, 128, 144, 152, 192, 384, 512], // multiple sizes
+          type: 'image/png',
+          purpose: 'any',
+          destination: path.join('icons', 'ios'),
+          ios: true,
+        },
+        {
+          src: path.resolve('src/public/images/icon/JaFood-putih.png'),
+          sizes: 1024,
+          destination: path.join('icons', 'ios'),
+          ios: 'startup',
+          type: 'image/png',
+          purpose: 'any',
         },
       ],
     }),

@@ -1,9 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-param-reassign */
-/* eslint-disable func-names */
 import CONFIG from '../../globals/config';
 
-const text_truncate = function (str, length, ending) {
+const text_truncate = (str, length, ending) => {
   if (length == null) {
     length = 100;
   }
@@ -81,18 +80,6 @@ const createLikedButtonTemplate = () => `
   </button>
 `;
 
-const createLikeButtonTemplateMain = () => `
-  <button aria-label="like this restaurant" id="likeButton" class="like">
-     <i class="fa fa-heart-o" aria-hidden="true"></i>
-  </button>
-`;
-
-const createLikedButtonTemplateMain = () => `
-  <button aria-label="unlike this restaurant" id="likeButton" class="like">
-    <i class="fa fa-heart" aria-hidden="true"></i>
-  </button>
-`;
-
 const bannerHome = `
   <div class="banner">
     <div class="hero-text">
@@ -135,8 +122,6 @@ export {
   createRestaurantDetailTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
-  createLikeButtonTemplateMain,
-  createLikedButtonTemplateMain,
   bannerHome,
   bannerOthers,
   modalReview,

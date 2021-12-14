@@ -1,9 +1,5 @@
-/* eslint-disable no-shadow */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-empty-function */
 import RestaurantSource from '../../data/restaurant-source';
 import { createRestaurantItemTemplate } from '../templates/template-creator';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Main = {
   async render() {
@@ -24,24 +20,11 @@ const Main = {
   },
   async afterRender() {
     try {
-      // document.querySelector('.loader').style.display = 'block';
       const restaurants = await RestaurantSource.mainRestaurant();
       const restaurant = restaurants.filter((element) => element.rating > 4.5);
       const topdiv = document.querySelector('.top-div');
-      // topdiv.innerHTML += this.animateLoading();
       restaurant.forEach((resto) => {
         topdiv.innerHTML += createRestaurantItemTemplate(resto);
-        // LikeButtonInitiator.init({
-        //   likeButtonContainer: document.querySelector('#likeButtonContainer'),
-        //   restaurant: {
-        //     id: r.id,
-        //     name: r.name,
-        //     pictureId: r.pictureId,
-        //     description: r.description,
-        //     city: r.city,
-        //     rating: r.rating,
-        //   },
-        // });
       });
     } catch (error) {
       const topdiv = document.querySelector('.top-div');
