@@ -2,7 +2,7 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import App from './views/app';
 import './components/footerApp';
-// import swRegister from './utils/sw-register';
+import swRegister from './utils/sw-register';
 
 const imgNavbar = document.querySelector('nav a img');
 imgNavbar.setAttribute('src', 'https://i.ibb.co/xh621tP/Ja-Food-putih.png');
@@ -23,7 +23,7 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
-  // swRegister();
+  swRegister();
 });
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('nav');

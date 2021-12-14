@@ -74,10 +74,10 @@ module.exports = {
         },
       ],
     }),
-    // new ServiceWorkerWebpackPlugin({
-    //   entry: path.resolve(__dirname, 'src/scripts/sw.js'),
-    //   filename: 'sw.js',
-    // }),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.resolve(__dirname, 'src/scripts/sw.js'),
+      filename: 'sw.js',
+    }),
     new WebpackPwaManifest({
       name: 'Restaurant Catalogue Web App',
       short_name: 'Restaurant App',
