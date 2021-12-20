@@ -31,6 +31,11 @@ class App {
     await this.checkBanner(url);
     this._content.innerHTML = await page.render();
     await page.afterRender();
+    const skipLink = document.querySelector('.skip-link');
+    skipLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.querySelector('#maincontent').focus();
+    });
   }
 
   checkBanner(url) {
