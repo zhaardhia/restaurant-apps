@@ -23,7 +23,7 @@ body {
   top: 0;
 }
 
-a, button {
+a, button, input, textarea {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-width: 44px;
@@ -115,7 +115,7 @@ a, button {
     overflow-x: hidden;
   }
   .nav-links {
-    z-index: 1;
+    z-index: 5;
     position: absolute;
     right: 0px;
     top: 0rem;
@@ -132,12 +132,13 @@ a, button {
     width: 100%;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+    opacity: 5;
   }
   .nav-links li {
     opacity: 0;
   }
   .burger {
-    z-index: 2;
+    z-index: 6;
     display: block;
     margin-top: 1rem;
     background-color: rgba(47, 93, 98, 0);
@@ -233,6 +234,7 @@ nav ul li a {
 .sticky {
   padding: 5px 50px;
   background-color: rgba(29, 29, 29, 0.8);
+  z-index: 0;
 }
 
 .banner {
@@ -599,6 +601,7 @@ main .modal-bg {
   opacity: 0;
   -webkit-transition: visibility 0s, opacity 0.5s;
   transition: visibility 0s, opacity 0.5s;
+  z-index: 9999;
 }
 
 main .bg-active {
@@ -621,6 +624,7 @@ main .modal {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 10px;
+  z-index: 10;
 }
 
 main .modal .modal-main {
@@ -1058,6 +1062,10 @@ main .modal-close:active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+#likeButtonContainer {
+  z-index: 1;
 }
 
 footer {

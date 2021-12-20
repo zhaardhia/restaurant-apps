@@ -54,7 +54,7 @@ $ijoMuda: #DFEEEA;
 .skip-link:focus {
     top: 0;
 }
-a, button{
+a, button, input, textarea{
     box-sizing: border-box;
     min-width: 44px;
     min-height: 44px;
@@ -108,7 +108,7 @@ a, button{
     }
     
     .nav-links{
-        z-index: 1;
+        z-index: 5;
         // position: absolute;
         // right: 0px;
         // height: 92vh;
@@ -124,13 +124,14 @@ a, button{
         align-items: center;
         width: 100%;
         transform: translateX(100%);
+        opacity: 5;
         // transition: transform 1s ease-in;
     }
     .nav-links li{
         opacity: 0;
     }
     .burger{
-        z-index: 2;
+        z-index: 6;
         display: block;
         margin-top: 1rem;
         background-color: rgba($color: #2F5D62, $alpha: 0);
@@ -191,6 +192,7 @@ nav{
 .sticky{
     padding: 5px 50px;
     background-color: rgba(29, 29, 29, 0.8);
+    z-index: 0;
 }
 @import 'bannerHero';
 

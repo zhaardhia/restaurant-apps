@@ -12,7 +12,7 @@
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
-    
+    z-index: 9999;
 }
 .bg-active{
     visibility: visible;
@@ -27,7 +27,7 @@
     // justify-content: space-around;
     align-items: center;
     border-radius: 10px;
-    
+    z-index: 10;
     .modal-main{
         width: 80%;
         margin-top: 2rem;
