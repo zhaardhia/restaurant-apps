@@ -35,7 +35,7 @@ const createRestaurantItemTemplate = (restaurant) => `
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => `
-  <div class="detail-head">
+  <div class="detail-head" tabindex="0">
     <img class="img-detail" src="${CONFIG.BASE_IMAGE_URL.SMALL}/${restaurant.pictureId}" alt="">
     <div class="vl"></div>
     <div class="detail-head-container">
@@ -45,7 +45,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
         <p class="detail-description">${restaurant.description}</p>
     </div>
   </div>
-  <div class="detail-menu">
+  <div class="detail-menu" tabindex="0">
     <h3>Menu</h3>
     <hr>
     <div class="detail-menu-eat">
@@ -59,7 +59,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
         </div>
     </div>
   </div>
-  <div class="detail-review">
+  <div class="detail-review" tabindex="0">
     <h3>Customer's Review</h3>
     <hr>
     <div class="detail-review-all">
@@ -69,13 +69,13 @@ const createRestaurantDetailTemplate = (restaurant) => `
 `;
 
 const createLikeButtonTemplate = () => `
-  <button aria-label="like this restaurant" id="likeButton" class="likeDetail">
+  <button aria-label="like this restaurant" tabindex="0" id="likeButton" class="likeDetail">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
 const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this restaurant" id="likeButton" class="likeDetail">
+  <button aria-label="unlike this restaurant" tabindex="0" id="likeButton" class="likeDetail">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
