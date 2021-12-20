@@ -9,7 +9,7 @@ const CONFIG = {
   DATABASE_NAME: 'restaurant-database',
   DATABASE_VERSION: 1,
   OBJECT_STORE_NAME: 'restaurants',
-  CACHE_NAME: new Date().toISOString(),
+  CACHE_NAME: 'RestaurantsCatalogue',
 };
 
 export default CONFIG;
