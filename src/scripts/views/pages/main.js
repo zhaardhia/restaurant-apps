@@ -20,7 +20,6 @@ const Main = {
   },
   async afterRender() {
     try {
-      
       const restaurants = await RestaurantSource.mainRestaurant();
       const restaurant = restaurants.filter((element) => element.rating > 4.5);
       const topdiv = document.querySelector('.top-div');

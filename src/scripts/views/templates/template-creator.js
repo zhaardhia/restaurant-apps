@@ -1,6 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-param-reassign */
 import CONFIG from '../../globals/config';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const text_truncate = (str, length, ending) => {
   if (length == null) {
@@ -34,7 +36,7 @@ const createRestaurantSkeletonTemplate = (count) => {
         
       </div>
     </div>
-  `
+  `;
   }
   return template;
 };
@@ -42,7 +44,7 @@ const createRestaurantSkeletonTemplate = (count) => {
 const createRestaurantItemTemplate = (restaurant) => `
   <div class="top-list" tabindex="0">
     <a href="#/detail/${restaurant.id}">
-    <img src="${CONFIG.BASE_IMAGE_URL.SMALL}/${restaurant.pictureId}" alt="${restaurant.name}" width="234" height="156">
+    <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL.SMALL}/${restaurant.pictureId}" alt="${restaurant.name}" width="234" height="156">
     <div class="top-list-info">
         <div class="info-text">
             <h3>${restaurant.name}</h3>
@@ -60,7 +62,7 @@ const createRestaurantItemTemplate = (restaurant) => `
 
 const createRestaurantDetailTemplate = (restaurant) => `
   <div class="detail-head" tabindex="0">
-    <img class="img-detail" src="${CONFIG.BASE_IMAGE_URL.SMALL}/${restaurant.pictureId}" alt="">
+    <img class="lazyload img-detail" data-src="${CONFIG.BASE_IMAGE_URL.SMALL}/${restaurant.pictureId}" alt="">
     <div class="vl"></div>
     <div class="detail-head-container">
         <h3 class="">${restaurant.name}</h3>

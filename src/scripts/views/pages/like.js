@@ -19,8 +19,8 @@ const Like = {
     try {
       const restaurants = await FavoriteRestaurantIdb.getAllRestaurant();
       const topdiv = document.querySelector('.top-div');
-      if(restaurants.length < 1){
-        topdiv.innerHTML += `<p id="no-data">😕 No Data 😕</p>`
+      if (restaurants.length < 1) {
+        topdiv.innerHTML += '<p id="no-data">😕 No Data 😕</p>';
       }
       restaurants.forEach((restaurant) => {
         topdiv.innerHTML += createRestaurantItemTemplate(restaurant);

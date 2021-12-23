@@ -3,7 +3,8 @@ import '../styles/main.scss';
 import App from './views/app';
 import './components/footerApp';
 import swRegister from './utils/sw-register';
-
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const imgNavbar = document.querySelector('nav a img');
 imgNavbar.setAttribute('src', 'https://i.ibb.co/xh621tP/Ja-Food-putih.png');

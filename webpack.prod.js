@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable import/no-extraneous-dependencies */
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
@@ -10,7 +11,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: [
-          /\.js$/
+          /\.js$/,
         ],
         exclude: '/node_modules/',
         use: [
@@ -34,4 +35,3 @@ module.exports = merge(common, {
   // },
   // plugins: [new MiniCssExtractPlugin()],
 });
-

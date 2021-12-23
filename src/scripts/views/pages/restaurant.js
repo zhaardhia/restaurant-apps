@@ -17,7 +17,7 @@ const Restaurant = {
 
   async afterRender() {
     const topdiv = document.querySelector('.top-div');
-    topdiv.innerHTML = ``;
+    topdiv.innerHTML = '';
     try {
       const restaurants = await RestaurantSource.mainRestaurant();
       restaurants.forEach((restaurant) => {
