@@ -1,5 +1,5 @@
 import RestaurantSource from '../../data/restaurant-source';
-import { createRestaurantItemTemplate } from '../templates/template-creator';
+import { createRestaurantItemTemplate, createRestaurantSkeletonTemplate } from '../templates/template-creator';
 
 const Restaurant = {
   async render() {
@@ -9,7 +9,7 @@ const Restaurant = {
         <hr>
         <div class="loader" style="margin-top: 2rem;"></div>
         <div class="top-div">
-        
+          ${createRestaurantSkeletonTemplate(20)}
         </div>
       </section>
     `;
@@ -17,6 +17,7 @@ const Restaurant = {
 
   async afterRender() {
     const topdiv = document.querySelector('.top-div');
+    topdiv.innerHTML = ``;
     try {
       const restaurants = await RestaurantSource.mainRestaurant();
       restaurants.forEach((restaurant) => {
@@ -24,8 +25,7 @@ const Restaurant = {
       });
     } catch (error) {
       topdiv.innerHTML += `
-        <h2 class="error-load-page">🙁 SYSTEM: ${error.message} 😔</h2> <br>
-        <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/H7wajFPnZGdRWaQeu0" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/SportsManias-sportsmanias-technical-difficulties-please-stand-by-H7wajFPnZGdRWaQeu0">via GIPHY</a></p>
+        <h2 class="error-load-page">🙁 SYSTEM: ${error.message} 😔<br>CHECK YOUR INTERNET CONNECTION !</h2>
       `;
     } finally {
       document.querySelector('.loader').style.display = 'none';

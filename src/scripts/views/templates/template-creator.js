@@ -15,6 +15,30 @@ const text_truncate = (str, length, ending) => {
   return str;
 };
 
+const createRestaurantSkeletonTemplate = (count) => {
+  let template = '';
+  for (let i = 0; i < count; i += 1) {
+    template += `
+      <div class="top-list" tabindex="0">
+      <a href="#">
+      <div class="top-list-info">
+          <div class="info-text">
+              <h3>Loading...</h3>
+              <p class="city">Loading...</p>
+          </div>
+          <p class="info-text info-text-desc">Loading...</p>
+          <p class="info-text">⭐️ 0</p>
+      </div>
+      </a>
+      <div id="likeButtonContainer">
+        
+      </div>
+    </div>
+  `
+  }
+  return template;
+};
+
 const createRestaurantItemTemplate = (restaurant) => `
   <div class="top-list" tabindex="0">
     <a href="#/detail/${restaurant.id}">
@@ -119,6 +143,7 @@ const modalReview = () => `
 
 export {
   createRestaurantItemTemplate,
+  createRestaurantSkeletonTemplate,
   createRestaurantDetailTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,

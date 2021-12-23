@@ -29,6 +29,7 @@ const Like = {
       const topdiv = document.querySelector('.top-div');
       topdiv.innerHTML += `
         <h2>🙁 ${error.message} 😔</h2> <br>
+        <h2>CHECK YOUR INTERNET CONNECTION</h2>
         <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/H7wajFPnZGdRWaQeu0" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/SportsManias-sportsmanias-technical-difficulties-please-stand-by-H7wajFPnZGdRWaQeu0">via GIPHY</a></p>
       `;
     } finally {

@@ -4,6 +4,7 @@ import App from './views/app';
 import './components/footerApp';
 import swRegister from './utils/sw-register';
 
+
 const imgNavbar = document.querySelector('nav a img');
 imgNavbar.setAttribute('src', 'https://i.ibb.co/xh621tP/Ja-Food-putih.png');
 
