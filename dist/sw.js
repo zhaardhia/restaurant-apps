@@ -3,12 +3,15 @@ var serviceWorkerOption = {
     "/images/c6b2c6c466715f76abcc5ec31e65fca4-hero-image.jpg",
     "/images/09f158c25ee72d8113679e9e82a3831f-hero-image-small.jpg",
     "/images/52533c308ec029d5ebac102d55ceeaf1-hero-image-large.jpg",
+    "/0.bundle.js",
     "/bundle.js",
-    "/images/icon/JaFood-putih.png",
-    "/images/icon/favicon.ico",
+    "/2.bundle.js",
+    "/images/skeleton.jpg",
     "/images/heros/hero-image-large.jpg",
     "/images/heros/hero-image-small.jpg",
     "/images/heros/hero-image.jpg",
+    "/images/icon/JaFood-putih.png",
+    "/images/icon/favicon.ico",
     "/index.html"
   ]
 };

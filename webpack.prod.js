@@ -10,7 +10,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: [
-          /\.js$/, /.s?css$/
+          /\.js$/
         ],
         exclude: '/node_modules/',
         use: [
