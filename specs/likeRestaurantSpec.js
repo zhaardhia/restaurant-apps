@@ -3,7 +3,7 @@ import FavoriteRestaurantIdb from '../src/scripts/data/favoriterestaurant-idb';
 // import LikeButtonInitiator from '../src/scripts/utils/like-button-initiator';
 import * as TestFactories from './helpers/testFactories';
 
-describe('Liking A Movie', () => {
+describe('Liking A Restaurant', () => {
   const addLikeButtonContainer = () => {
     document.body.innerHTML = '<div id="likeButtonContainer"></div>';
   };

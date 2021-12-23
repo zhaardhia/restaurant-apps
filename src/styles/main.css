@@ -198,6 +198,7 @@ nav {
 nav img {
   position: relative;
   width: 150px;
+  height: auto;
   -webkit-transition: 0.6s;
   transition: 0.6s;
 }
@@ -347,6 +348,7 @@ main .promo-banner {
 
 main .promo-banner img {
   width: 300px;
+  height: auto;
 }
 
 main .promo-banner p {
